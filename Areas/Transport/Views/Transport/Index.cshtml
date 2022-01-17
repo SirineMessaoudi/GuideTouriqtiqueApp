@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GuideTouristiqueApp.Models.Transport>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Transports </h1>
+<br />
+
+<br />
+<partial name="_CreateButtonPartial" />
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <partial name="_TableButtonPartial" model="item.Id" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

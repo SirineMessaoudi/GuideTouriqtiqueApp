@@ -1,0 +1,21 @@
+﻿@model GuideTouristiqueApp.Models.Transport
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Etes-vous sûr de vouloir supprimer ceci?</h1>
+
+<div>
+    <h4>Transport</h4>
+    <hr />
+    <dl class="row">
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

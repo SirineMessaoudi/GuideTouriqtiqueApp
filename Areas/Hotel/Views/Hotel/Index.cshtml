@@ -1,0 +1,54 @@
+﻿@model IEnumerable<GuideTouristiqueApp.Models.Hotel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Hotels </h1>
+<br />
+<br />
+<h3><center>Lequel vous préferez réserver?</center></h3>
+<br />
+<partial name="_CreateButtonPartial" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEtoile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qualite)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEtoile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qualite)
+                </td>
+                <td>
+                    <partial name="_TableButtonPartial" model="item.Id" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

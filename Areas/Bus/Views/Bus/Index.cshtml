@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GuideTouristiqueApp.Models.Bus>
+
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1>Buses : </h1>
+    <br />
+    <partial name="_CreateButtonPartial" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroLigne)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Horaire)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroLigne)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Horaire)
+                    </td>
+                    <td>
+                        <partial name="_TableButtonPartial" model="item.Id" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
